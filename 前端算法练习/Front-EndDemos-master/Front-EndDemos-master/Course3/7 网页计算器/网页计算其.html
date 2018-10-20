@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页计算器</title>
+    <style>
+        div, h3, ul, li, span, p{
+            padding:0px;
+            margin:0;
+        }
+        #clc{
+            position:relative;
+            margin:10px auto;
+            width:300px;
+            background:#000;
+            height:411px;
+            padding:0 0 17px 8px;
+        }
+        h3{
+            color:#fff;
+            text-align:right;
+            font:12px/20px Arial;
+            padding:0 5px;
+        }
+        .inputs{
+            border:0;
+            width:290px;
+            height:84px;
+            text-align:right;
+            font:700 50px/84px Arial;
+            background:url("img/inputBg.jpg") repeat-x;
+            padding:0 5px;
+        }
+        #clc ul{
+            list-style:none;
+        }
+        ul li{
+            float:left;
+            width:63px;
+            height:41px;
+            margin:17px 10px 0 0;
+        }
+        a{
+            color:#fff;
+            outline:none;
+            text-decoration:none;
+        }
+        #clc ul li a{
+            display:block;
+            text-align:center;
+        }
+        .btn1 a{
+            width:63px;
+            height:41px;
+            line-height:41px;
+            background:url("img/btn.jpg") no-repeat 0 -41px;
+        }
+        .btn2 a{
+            width:63px;
+            height:41px;
+            line-height:41px;
+            background:url("img/btn.jpg") no-repeat 0 0;
+        }
+        .btn3 a{
+            width:60px;
+            height:94px;
+            line-height:93px;
+            background:url("img/btn.jpg") no-repeat 0 -170px;
+        }
+        .btn4{
+            width:136px;
+            height:41px;
+            line-height:41px;
+        }
+        .btn4 a{
+
+            background:url("img/btn.jpg") no-repeat 0 -84px;
+        }
+        .formlate{
+            position: absolute;
+            right:0;
+            top: 20px;
+            background: none;
+            border: 0;
+            font: 700 12px/1.5 Arial;
+            width: 280px;
+            padding: 3px 15px 0 5px;
+            text-align: right;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            var clc=document.getElementById("clc");
+            var btn1=clc.getElementsByTagName("li");
+            var formlate=clc.getElementsByClassName("formlate")[0];
+            var inputs=clc.getElementsByClassName("inputs")[0];
+            for(var i=0,len=btn1.length; i<len; i++){
+                btn1[i].onclick=function(){
+                    switch(this.childNodes[1].firstChild.innerText)
+                    {
+                        case "C":
+                            inputs.value="";
+                            formlate.value="";
+                            break;
+                        case "%":
+                            inputs.value="";
+                            formlate.value="";
+                            break;
+                        case "/":
+                            inputs.value="";
+                            formlate.value="";
+                            break;
+                        case "*":
+                            inputs.value="";
+                            formlate.value="";
+                            break;
+                        case "+":
+                            inputs.value="";
+                            formlate.value="";
+                            break;
+                        case "-":
+                            inputs.value="";
+                            formlate.value="";
+                            break;
+                        case ".":
+                            inputs.value="";
+                            formlate.value="";
+                            break;
+                        case "=":
+                            formlate.value=eval(3+3);
+                            break;
+                    }
+                }
+            }
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+    <div id="clc">
+        <h3>By cumthyb@163.com</h3>
+        <input type="text" readonly="readonly" maxlength="9" value="0" class="inputs"/>
+        <ul>
+            <li class="btn1">
+                <a href="#"><strong>C</strong></a>
+            </li>
+            <li class="btn1">
+                <a href="#"><strong>%</strong></a>
+            </li>
+            <li class="btn1">
+                <a href="#"><strong>/</strong></a>
+            </li>
+            <li class="btn1">
+                <a href="#"><strong>*</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>7</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>8</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>9</strong></a>
+            </li>
+            <li class="btn1">
+                <a href="#"><strong>-</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>4</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>5</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>6</strong></a>
+            </li>
+            <li class="btn1">
+                <a href="#"><strong>+</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>1</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>2</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>3</strong></a>
+            </li>
+            <li class="btn3">
+                <a href="#"><strong>=</strong></a>
+            </li>
+            <li class="btn4">
+                <a href="#"><strong>0</strong></a>
+            </li>
+            <li class="btn2">
+                <a href="#"><strong>.</strong></a>
+            </li>
+        </ul>
+        <input type="text" class="formlate" value="7*8"/>
+    </div>
+</body>
+</html>

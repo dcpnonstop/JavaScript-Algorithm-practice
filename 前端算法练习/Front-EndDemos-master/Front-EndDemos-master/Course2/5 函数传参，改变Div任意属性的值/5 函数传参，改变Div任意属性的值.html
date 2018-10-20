@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数传参，改变Div任意属性的值</title>
+    <style>
+        #command p{
+            line-height:50px;
+            margin-top:5px;
+        }
+    </style>
+
+    <script>
+
+        var changeStyle = function (elem, name, value) {
+            elem.style[name] = value
+        }
+
+
+        window.onload=function(){
+            var btnChange=document.getElementById("OK");
+            var reset=document.getElementById("reset");
+            var att=document.getElementById("att");
+            var value=document.getElementById("value");
+            var containter=document.getElementById("containter");
+            btnChange.onclick=function(){
+                changeStyle(containter,att.value,value.value);
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div style="width:300px;margin:0 auto;overflow:auto" id="command">
+        <p>属性名: <input type="text" id="att"/> </p>
+        <p>属性值: <input type="text" id="value"/> </p>
+        <p> <button type="submit" id="OK">确认</button> <button type="reset" id="reset">重置</button> </p>
+    </div>
+    <div id="containter" style="background-color:black ;width:300px;height:300px;margin: 0 auto;color:white;padding:5px">
+        在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2) 用parseInt解析数字，并求和</title>
+    <script>
+        window.onload=function(){
+            var inputs=document.getElementsByTagName("input");
+
+            var a=inputs[0].value;
+            var b=inputs[1].value;
+            inputs[2].onclick=function(){
+                /* 方法执行时 ab 任然为空*/
+                document.getElementsByTagName("span")[0].innerText=parseInt(inputs[0].value)+parseInt(inputs[1].value);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h2 style="text-align:center">
+        <input type="text"/> &nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;<input type="text"/> =<span></span> &nbsp;&nbsp;&nbsp;<input type="button" value="计算"/>
+    </h2>
+</body>
+</html>

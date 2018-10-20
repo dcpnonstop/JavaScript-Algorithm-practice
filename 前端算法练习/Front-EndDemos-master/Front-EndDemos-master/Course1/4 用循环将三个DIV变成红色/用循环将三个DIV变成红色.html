@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用循环将三个DIV变成红色</title>
+    <style>
+        .center > div{
+            height:100px;
+            width:100px;
+            float:left;
+            margin:2px 5px;
+            background-color:blue;
+        }
+
+    </style>
+
+    <script>
+
+        HTMLCollection.prototype.toArray=function(){
+            return [].slice.call(this);
+        };
+
+        window.onload = function(){
+            var btn = document.getElementsByTagName("button")[0];
+            var divs = document.getElementsByClassName("center")[0].children.toArray();
+            btn.onclick = function(){
+                divs.forEach(function(p){
+                    p.style.backgroundColor = "red";
+                })
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <p style="text-align:center">
+        <button>用循环将三个DIV变成红色</button>
+    <div style="width:330px;height:110px;margin:5px auto" class="center">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

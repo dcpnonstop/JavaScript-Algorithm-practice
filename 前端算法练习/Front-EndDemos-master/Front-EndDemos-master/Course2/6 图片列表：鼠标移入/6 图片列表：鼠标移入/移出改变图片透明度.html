@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片列表：鼠标移入/移出改变图片透明度</title>
+    <style>
+        body ul img li{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            display:block;
+            padding:10px;
+            margin:0 auto;
+        }
+        ul{
+            list-style:none;
+            width:700px;
+            overflow:hidden;
+            zoom:1;
+            border:1px solid #333;
+            margin:0 auto;
+            /*padding: 0 0 10px 10px;*/
+        }
+        li{
+            border:1px solid #ccc;
+            float:left;
+            opacity:0.3;
+        }
+        .current{ opacity:1; filter:alpha(opacity=100); }
+    </style>
+
+    <script>
+
+        HTMLCollection.prototype.toArray = function(){
+            return [].slice.call(this);
+        };
+
+        window.onload = function(){
+            var imgs = document.getElementsByTagName("img").toArray();
+            for(var i = 0, len = imgs.length; i < len; i++){
+                imgs[i].src = "img/" + (i + 1) + ".jpg";
+            }
+
+            imgs.forEach(function(p){
+                p.onmouseover = function(){
+                    this.parentNode.className = "current";
+                };
+                p.onmouseout = function(){
+                    this.parentNode.className = " ";
+                }
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="container">
+
+        <ul>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+            <li><img src="" alt="标志"></li>
+        </ul>
+
+
+    </div>
+</body>
+</html>

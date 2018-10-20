@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>记住密码提示框</title>
+    <script>
+        window.onload=function(){
+            var label=document.getElementsByTagName("label")[0];
+            var tip=document.getElementsByClassName("tip")[0];
+            label.onmouseover=function(){
+                tip.style.display="block";
+            }
+            label.onmouseout=function(){
+                tip.style.display="none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="chk" style="text-align:center"><input type="checkbox" name="chk"/> 两周内登陆有效</label>
+    <div class="tip" style="display:none;width: 20px;height:20px">lakgjsgj凉后</div>
+</body>
+</html>

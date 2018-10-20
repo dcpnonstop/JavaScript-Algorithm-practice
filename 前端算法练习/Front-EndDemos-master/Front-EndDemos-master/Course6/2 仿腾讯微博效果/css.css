@@ -1,0 +1,165 @@
+body, div, ul, p, li, input, img, h2,h3,a{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration:none;
+    color:#000000;
+}
+body{
+    color:#333;
+    background:#3c3a3b;
+    font-size:12px;
+}
+#msgBox{
+    width:500px;
+    background:#fff;
+    border-radius:5px;
+    margin:10px auto;
+    padding-top:10px;
+}
+#msgBox form{
+    background: url("img/boxBG.jpg") repeat-x 0 bottom;
+    padding:0 20px 15px;
+    display:block;
+}
+#msgBox form > div{
+    margin-top:10px;
+    position:relative;
+    color:#999;
+}
+#msgBox form ul{
+    list-style:none;
+    display:inline-block;
+    line-height:28px;
+    height:28px;
+    position:absolute;
+    bottom:0px;
+}
+#msgBox form ul > li{
+    float:left;
+    margin-right:9px;
+}
+#userName, #conBox{
+    color:#777;
+    border:1px solid #d0d0d0;
+    border-radius:6px;
+    /*background: #fff url(img/inputBG.png) repeat-x;*/
+    padding:3px 5px;
+    font:14px/1.5 arial;
+}
+#userName{
+    height:20px;
+    width:20%;
+    margin-right:3px;
+}
+#msgBox form > div:last-child{
+    text-align:right;
+    height:30px;
+}
+#msgBox form > div:last-child p{
+    text-align:center;
+    display:inline-block;
+    position:absolute;
+    top:0;right:115px;
+    height:30px;
+    line-height:30px;
+    vertical-align:middle;
+}
+#msgBox form > div:last-child p>span{
+    text-align:center;
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    vertical-align:middle;
+    float:left;
+}
+
+#sendBtn{
+    display:inline-block;
+    border: 0;
+    width: 112px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    background: url("img/btn.png") no-repeat;
+}
+
+#conBox{
+    width: 448px;
+    resize: none;
+    height: 65px;
+    overflow: auto;
+}
+#face img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 6px;
+    opacity: 0.5;
+    border-radius: 3px;
+}
+#face img:hover{
+    opacity: 1;
+}
+#maxNum{
+    font: 26px/30px Georgia, Tahoma, Arial;
+    padding: 0 5px;
+    float:left;
+}
+#commentList{
+    padding:10px;
+    overflow:auto;
+}
+
+#commentList h3{
+    position: relative;
+    height: 33px;
+    font-size: 14px;
+    font-weight: 400;
+    background: #e3eaec;
+    border: 1px solid #dee4e7;
+    line-height:33px;
+    padding-left: 20px;
+}
+#commentList ul{
+    list-style:none;
+}
+#commentList ul>li{
+    float:left;
+    width:100%;
+    clear:both;
+    border-bottom: 1px dashed #d8d8d8;
+    padding: 10px 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+#commentList .userPic,.content{
+
+}
+#commentList .userPic{
+    float:left;
+}
+#commentList .content{
+    float:right;
+    overflow:auto;
+    width:420px;
+}
+#commentList .content>p{
+    height:20px;
+    line-height:20px;
+    margin-left:10px;
+}
+#commentList .content .userMesInfo{
+    display: inline;
+    word-wrap: break-word;
+}
+
+#commentList .content .commentTime{
+    color: #889db6;
+    font: 12px/18px arial;
+    margin-top: 5px;
+    overflow: hidden;
+    zoom: 1;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+
+    <style>
+        body>div{
+            margin:0 auto;
+            display: block;
+            text-align:center;
+            width:500px;
+            overflow:auto;
+        }
+
+        body>div>ul{
+            list-style:none;
+            display:block;
+            overflow:auto;
+        }
+
+        li{
+            float:left;
+        }
+
+        div>ul:first-child>li{
+            margin-right:15px;
+        }
+        div>ul:first-child span{
+            width:10px;
+            height:10px;
+            display:inline-block;
+            cursor:pointer;
+        }
+
+
+        div>ul:nth-child(2)>li{
+            width:50px;
+            height:25px;
+            margin-right:5px;
+            border:solid 1px;
+            text-align:center;
+            color: #fff;
+            background-color:rebeccapurple;
+        }
+
+    </style>
+
+    <script>
+
+        window.onload=function(){
+
+            HTMLCollection.prototype.toArray=function(){
+                return [].slice.call(this);
+            };
+
+        var colorSpans=document.getElementsByClassName("color")
+
+        var navs=document.getElementsByTagName("ul")[1].children.toArray();
+
+        var index=-1;
+
+
+        for(var i=0,len=colorSpans.length; i<len; i++){
+            colorSpans[i].index=i;
+            var obj=colorSpans[i].onclick=function(){
+                index=this.index;
+                navs.forEach(function(p){
+                   p.style.backgroundColor=colorSpans[index].style.backgroundColor;
+                   document.getElementsByTagName("body")[0].style.backgroundColor=colorSpans[index].style.backgroundColor;
+                })
+            }
+        }
+
+        }
+    </script>
+
+
+</head>
+<body>
+    <div>
+        <ul>
+            <li><span class="color" style="background-color:brown "></span></li>
+            <li><span class="color" style="background-color:blue"></span></li>
+            <li><span class="color" style="background-color:green"></span></li>
+        </ul>
+        <ul>
+            <li>新闻</li>
+            <li>娱乐</li>
+            <li>体育</li>
+            <li>电影</li>
+            <li>音乐</li>
+            <li>旅游</li>
+        </ul>
+    </div>
+</body>
+</html>

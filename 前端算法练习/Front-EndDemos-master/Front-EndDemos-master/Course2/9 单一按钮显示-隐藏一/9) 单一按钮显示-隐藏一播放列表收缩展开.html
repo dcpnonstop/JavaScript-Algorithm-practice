@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9 单一按钮显示/隐藏一播放列表收缩展开</title>
+    <style>
+        body,div,ul,li{
+            margin:0;
+            padding:0;
+        }
+
+        #container{
+            margin:0 auto;
+            width:200px;
+        }
+
+        h2{
+            cursor: pointer;
+            color: #57646E;
+            font-size: 14px;
+            font-weight: 400;
+            border: 1px solid;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            background: #ced3d7 url(img/ico.gif) 180px -15px no-repeat;
+            border-color: #fff #e9edf2;
+        }
+
+        .unfold{
+            display:block;
+        }
+        .shrink{
+            display:none;
+            list-style:none;
+        }
+
+    </style>
+
+    <script>
+        window.onload=function(){
+            var ul=document.getElementsByTagName("ul")[0];
+            var h2=document.getElementsByTagName("h2")[0];
+            h2.onclick=function(){
+                if(ul.className=="shrink"){
+                    ul.className="unfold";
+                    this.style.backgroundPositionY="-15px";
+                }
+                else{
+                    ul.className="shrink"
+                    this.style.backgroundPositionY="15px";
+                }
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <h2>播放列表</h2>
+        <ul class="shrink">
+            <li>歌曲一</li>
+            <li>歌曲一</li>
+            <li>歌曲一</li>
+            <li>歌曲一</li>
+            <li>歌曲一</li>
+            <li>歌曲一</li>
+            <li>歌曲一</li>
+        </ul>
+
+    </div>
+</body>
+</html>

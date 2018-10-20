@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3) 求出数组中所有数字的和</title>
+    <style>
+        input{
+            line-height:20px;
+            margin:5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="nums" type="text" value=""/>输入数字求和，数字之间用半角","号分隔 <br>
+        <input type="button" value="求和"/><br>
+        <span></span>
+
+        <script>
+            /*[^abc]  方向字符集  不匹配abc   注意 ^ */
+            document.getElementsByTagName("input")[0].onkeyup=function(){
+                this.value=this.value.replace(/[^(\d)|(,)]/,'')
+            }
+
+            document.getElementsByTagName("input")[1].onclick=function(){
+                var nums=document.getElementById("nums").value.split(",");
+                var sum=0;
+                nums.forEach(function(p){
+                    sum+=parseInt(p) ;
+                })
+                document.getElementsByTagName("span")[0].innerText=sum;
+                alert(sum);
+            }
+
+        </script>
+
+
+    </div>
+</body>
+</html>
